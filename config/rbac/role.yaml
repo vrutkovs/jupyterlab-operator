@@ -19,6 +19,18 @@ rules:
   - update
   - watch
 - apiGroups:
+  - apps
+  resources:
+  - deployments/finalizers
+  verbs:
+  - create
+  - delete
+  - get
+  - list
+  - patch
+  - update
+  - watch
+- apiGroups:
   - ""
   resources:
   - pods
@@ -29,6 +41,18 @@ rules:
   - ""
   resources:
   - services
+  verbs:
+  - create
+  - delete
+  - get
+  - list
+  - patch
+  - update
+  - watch
+- apiGroups:
+  - ""
+  resources:
+  - services/finalizers
   verbs:
   - create
   - delete
@@ -52,6 +76,18 @@ rules:
 - apiGroups:
   - jupyter.example.com
   resources:
+  - jupyterlabs/finalizers
+  verbs:
+  - create
+  - delete
+  - get
+  - list
+  - patch
+  - update
+  - watch
+- apiGroups:
+  - jupyter.example.com
+  resources:
   - jupyterlabs/status
   verbs:
   - get
@@ -61,6 +97,18 @@ rules:
   - route.openshift.io
   resources:
   - route
+  verbs:
+  - create
+  - delete
+  - get
+  - list
+  - patch
+  - update
+  - watch
+- apiGroups:
+  - route.openshift.io
+  resources:
+  - route/finalizers
   verbs:
   - create
   - delete
