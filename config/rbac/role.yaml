@@ -96,7 +96,7 @@ rules:
 - apiGroups:
   - route.openshift.io
   resources:
-  - route
+  - routes
   verbs:
   - create
   - delete
@@ -108,7 +108,7 @@ rules:
 - apiGroups:
   - route.openshift.io
   resources:
-  - route/finalizers
+  - routes/finalizers
   verbs:
   - create
   - delete
