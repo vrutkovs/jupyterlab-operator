@@ -197,6 +197,20 @@ func (r *JupyterlabReconciler) deploymentForJupyterlab(m *jupyterv1alpha1.Jupyte
 									ContainerPort: 8888,
 								},
 							},
+							VolumeMounts: []corev1.VolumeMount{
+								{
+									Name:      "data",
+									MountPath: "home/jovyan/.local/share/jupyter",
+								},
+							},
+						},
+					},
+					Volumes: []corev1.Volume{
+						{
+							Name: "data",
+							VolumeSource: corev1.VolumeSource{
+								EmptyDir: nil,
+							},
 						},
 					},
 				},
