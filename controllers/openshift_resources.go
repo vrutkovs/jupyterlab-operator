@@ -25,6 +25,10 @@ func newRoute(name string, namespace string, svcname string, port int) *routev1.
 			Port: &routev1.RoutePort{
 				TargetPort: intstr.FromInt(port),
 			},
+			TLS: &routev1.TLSConfig{
+				Termination:                   routev1.TLSTerminationEdge,
+				InsecureEdgeTerminationPolicy: routev1.InsecureEdgeTerminationPolicyRedirect,
+			},
 		},
 	}
 }
