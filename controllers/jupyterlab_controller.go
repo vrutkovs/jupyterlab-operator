@@ -200,7 +200,7 @@ func (r *JupyterlabReconciler) deploymentForJupyterlab(m *jupyterv1alpha1.Jupyte
 							VolumeMounts: []corev1.VolumeMount{
 								{
 									Name:      "data",
-									MountPath: "/home/jovyan/.local/share/jupyter",
+									MountPath: "/home/jupyter",
 								},
 							},
 						},
