@@ -42,9 +42,9 @@ type JupyterlabReconciler struct {
 
 // +kubebuilder:rbac:groups=jupyter.example.com,resources=jupyterlabs,verbs=get;list;watch;create;update;patch;delete
 // +kubebuilder:rbac:groups=jupyter.example.com,resources=jupyterlabs/status,verbs=get;update;patch
-// +kubebuilder:rbac:groups=apps,resources=deployments/finalizers,verbs=get;list;watch;create;update;patch;delete
+// +kubebuilder:rbac:groups=apps,resources=deployments,verbs=get;list;watch;create;update;patch;delete
 // +kubebuilder:rbac:groups=core,resources=pods,verbs=get;list;
-// +kubebuilder:rbac:groups=core,resources=services,verbs=get;list;
+// +kubebuilder:rbac:groups=core,resources=services,verbs=get;list;watch;create;update;patch;delete
 
 func (r *JupyterlabReconciler) Reconcile(req ctrl.Request) (ctrl.Result, error) {
 	ctx := context.Background()
