@@ -3,6 +3,6 @@ resources:
 apiVersion: kustomize.config.k8s.io/v1beta1
 kind: Kustomization
 images:
-- digest: sha256:95db8aed35f47f9b343976a9cfee7f842c9b8acd0e364d10d0b861b862c91c06
+- digest: sha256:0e4e256e659e8b3910cc701ce1fc5fd24bae153963ee939a9186e47acc6bb653
   name: controller
   newName: quay.io/vrutkovs/jupyterlab-operator

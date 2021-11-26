@@ -190,7 +190,7 @@ func (r *JupyterlabReconciler) deploymentForJupyterlab(m *jupyterv1alpha1.Jupyte
 					Containers: []corev1.Container{
 						{
 							Name:  "jupyterlab",
-							Image: "quay.io/aaziz/jupyterlab:latest",
+							Image: "quay.io/vrutkovs/jupyterlab-operator:minimal-notebook-3.2.3",
 							Ports: []corev1.ContainerPort{
 								{
 									Protocol:      corev1.ProtocolTCP,
@@ -200,7 +200,7 @@ func (r *JupyterlabReconciler) deploymentForJupyterlab(m *jupyterv1alpha1.Jupyte
 							VolumeMounts: []corev1.VolumeMount{
 								{
 									Name:      "data",
-									MountPath: "/home/jupyter",
+									MountPath: "/home/jovyan",
 								},
 							},
 						},
